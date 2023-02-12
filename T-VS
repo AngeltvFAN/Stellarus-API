@@ -2,7 +2,7 @@ local StellarusV2 = {}
 
 function StellarusV2:EncryptGui(Gui)
 	
-	if Gui.ClassName == "ScreenGui" then
+	if Gui.ClassName == Instance.new("ScreenGui") then
 		local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 		local randomString = ""
 		math.randomseed(os.time())
@@ -19,7 +19,7 @@ function StellarusV2:EncryptGui(Gui)
 
 		Gui.Name = randomString
 	else
-		error("Your project: " ..Gui.. "is not a screengui, better use the function ''Encrypt'' to Encrypt Frames, Buttons or Label's")
+		print("Your project: " ..Gui.. "is not a screengui, better use the function ''Encrypt'' to Encrypt Frames, Buttons or Label's")
 	end
 
 end
@@ -39,7 +39,7 @@ function StellarusV2:ProtectGuiFD(Gui)
 		end
 
 		if D == true then
-			Gui.Parent = game:GetService("GuiService")
+			Gui.Parent = game.CoreGui.RobloxGui
 		end
 	end
 end
