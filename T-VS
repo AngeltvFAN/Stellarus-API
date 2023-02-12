@@ -1,3 +1,9 @@
+-- StellarusV2 By Rt
+
+
+
+
+
 local StellarusV2 = {}
 
 function StellarusV2:Encrypt(ObjectToEncrypt)
