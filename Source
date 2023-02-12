@@ -1,0 +1,20 @@
+local StellarusV2 = {}
+
+function StellarusV2:ProtectGuiFD(Gui)
+
+	local D = nil
+
+	local function IsDexFound()
+		for _, child in pairs(game:GetDescendants()) do
+			if child:IsA("Frame") then
+				if child.Name == "SaveInstance" then
+					D = true
+				end
+			end
+		end
+	end
+	
+	if D == true then
+		Gui.Parent = game:GetService("CoreGui").RobloxGui
+	end
+end
