@@ -1,0 +1,47 @@
+local StellarusV2 = {}
+
+function StellarusV2:EncryptGui(Gui)
+	
+	if Gui.ClassName == "ScreenGui" then
+		local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+		local randomString = ""
+		math.randomseed(os.time())
+
+		for i = 1, 10 do
+			local randomIndex = math.random(1, #characters) 
+			local randomChar = string.sub(characters, randomIndex, randomIndex) 
+			while string.find(randomString, randomChar) do 
+				randomIndex = math.random(1, #characters) 
+				randomChar = string.sub(characters, randomIndex, randomIndex) 
+			end
+			randomString = randomString .. randomChar 
+		end
+
+		Gui.Name = randomString
+	else
+		print("Your project: " ..Gui.. "is not a screengui, better use the function ''Encrypt'' to Encrypt Frames, Buttons or Label's")
+	end
+
+end
+
+function StellarusV2:ProtectGuiFD(Gui)
+	while true do
+		local D = nil
+
+		local function IsDexFound()
+			for _, child in pairs(game:GetDescendants()) do
+				if child:IsA("Frame") then
+					if child.Name == "SaveInstance" then
+						D = true
+					end
+				end
+			end
+		end
+
+		if D == true then
+			Gui.Parent = game:GetService("GuiService")
+		end
+	end
+end
+
+return StellarusV2
