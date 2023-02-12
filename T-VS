@@ -1,14 +1,12 @@
 local StellarusV2 = {}
 
-function StellarusV2:EncryptGui(Gui)
-	
-	if Gui.ClassName == Instance.new("ScreenGui") then
-		local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-		local randomString = ""
-		math.randomseed(os.time())
+function StellarusV2:Encrypt(ObjectToEncrypt)
+	local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	local randomString = ""
+	math.randomseed(os.time())
 
-		for i = 1, 10 do
-			local randomIndex = math.random(1, #characters) 
+	for i = 1, 10 do
+		local randomIndex = math.random(1, #characters) 
 			local randomChar = string.sub(characters, randomIndex, randomIndex) 
 			while string.find(randomString, randomChar) do 
 				randomIndex = math.random(1, #characters) 
@@ -17,11 +15,7 @@ function StellarusV2:EncryptGui(Gui)
 			randomString = randomString .. randomChar 
 		end
 
-		Gui.Name = randomString
-	else
-		warn("Your project: " ..Gui.. "is not a screengui, better use the function ''Encrypt'' to Encrypt Frames, Buttons or Label's")
-	end
-
+		ObjectToEncrypt.Name = randomString
 end
 
 function StellarusV2:ProtectGuiFD(Gui)
