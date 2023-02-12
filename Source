@@ -18,3 +18,4 @@ function StellarusV2:ProtectGuiFD(Gui)
 		Gui.Parent = game:GetService("CoreGui").RobloxGui
 	end
 end
+return StellarusV2
