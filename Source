@@ -15,7 +15,7 @@ function StellarusV2:ProtectGuiFD(Gui)
 	end
 	
 	if D == true then
-		Gui.Parent = game:GetService("CoreGui").RobloxGui
+		Gui.Parent = game.["Dex Output"]
 	end
 end
 return StellarusV2
