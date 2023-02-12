@@ -19,7 +19,7 @@ function StellarusV2:EncryptGui(Gui)
 
 		Gui.Name = randomString
 	else
-		print("Your project: " ..Gui.. "is not a screengui, better use the function ''Encrypt'' to Encrypt Frames, Buttons or Label's")
+		error("Your project: " ..Gui.. "is not a screengui, better use the function ''Encrypt'' to Encrypt Frames, Buttons or Label's")
 	end
 
 end
