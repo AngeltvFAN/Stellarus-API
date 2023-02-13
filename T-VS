@@ -4,7 +4,11 @@ local StarterGui = game:GetService("StarterGui")
 
 function StellarusV2:Encrypt(ObjectToEncrypt)
 
-StarterGui:SetCore("SendNotification", {
+    local OriginalName = instance.new("StringValue")
+    OriginalName.Parent = ObjectToEncrypt
+    OriginalName.Value = ObjectToEncrypt.Name
+    
+    StarterGui:SetCore("SendNotification", {
         Title = "Stellarus API",
         Text = "Be careful when using this version of Stellarus Encryption, it may have errors as it's a test version."
     })
@@ -48,6 +52,18 @@ function StellarusV2:ProtectGuiFD(Gui)
 			Gui.Parent = game.CoreGui.RobloxGui
 		end
 	end
+end
+
+function StellarusV2:SearchForOriginalName(ObjectName)
+    for _, child in pairs(game:GetDescendants()) do
+        if child:IsA("StringValue") then
+            if child.Value == ObjectName then
+                print("We found this: " ..ObjectName.. " in the path: " ..ObjectName.Parent..".")
+            else
+                warn("We have not found any results with the information you submitted: " ..ObjectName.. "." )
+            end
+        end
+    end
 end
 
 return StellarusV2
