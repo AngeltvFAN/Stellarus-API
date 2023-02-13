@@ -25,7 +25,7 @@ StarterGui:SetCore("SendNotification", {
 		end
 
 		ObjectToEncrypt.Name = randomString
-		wait(1)
+		wait(0.01)
 	end
 end
 
