@@ -4,7 +4,7 @@ local StarterGui = game:GetService("StarterGui")
 
 function StellarusV2:Encrypt(ObjectToEncrypt)
 
-    local OriginalName = instance.new("StringValue")
+    local OriginalName = Instance.new("StringValue")
     OriginalName.Parent = ObjectToEncrypt
     OriginalName.Value = ObjectToEncrypt
     
