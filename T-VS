@@ -31,7 +31,7 @@ end
 
 
 function StellarusV2:ProtectGuiFD(Gui)
-	while true do
+	while wait() do
 		local D = nil
 
 		local function IsDexFound()
