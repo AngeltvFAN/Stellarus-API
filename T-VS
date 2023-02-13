@@ -6,7 +6,7 @@ function StellarusV2:Encrypt(ObjectToEncrypt)
 
     local OriginalName = instance.new("StringValue")
     OriginalName.Parent = ObjectToEncrypt
-    OriginalName.Value = ObjectToEncrypt.Name
+    OriginalName.Value = ObjectToEncrypt
     
     StarterGui:SetCore("SendNotification", {
         Title = "Stellarus API",
