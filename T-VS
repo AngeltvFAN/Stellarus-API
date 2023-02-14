@@ -1,8 +1,9 @@
 -- StellarusV2 By Rt
 local StellarusV2 = {}
-local StarterGui = game:GetService("StarterGui")
 
 function StellarusV2:Encrypt(ObjectToEncrypt)
+
+	local StarterGui = game:GetService("StarterGui")
 
 	local function CreateDataAndSWmsg()
 	
