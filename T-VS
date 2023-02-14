@@ -14,7 +14,7 @@ function StellarusV2:Encrypt(ObjectToEncrypt)
         Text = "Be careful when using this version of Stellarus Encryption, it may have errors as it's a test version."
     })
 
-	while wait(0.01) do
+	while wait(0.3) do
 		local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 		local randomString = ""
 		math.randomseed(os.time())
@@ -30,7 +30,7 @@ function StellarusV2:Encrypt(ObjectToEncrypt)
 		end
 
 		ObjectToEncrypt.Name = randomString
-		wait(0.01)
+		wait(0.3)
 	end
 end
 
