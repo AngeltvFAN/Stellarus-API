@@ -13,25 +13,22 @@ function StellarusV2:Encrypt(ObjectToEncrypt)
         Title = "Stellarus API",
         Text = "Be careful when using this version of Stellarus Encryption, it may have errors as it's a test version."
     })
+    
+	local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	local randomString = ""
+	math.randomseed(os.time())
 
-	while true do
-		local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-		local randomString = ""
-		math.randomseed(os.time())
-
-		for i = 1, 10 do
-			local randomIndex = math.random(1, #characters) 
-			local randomChar = string.sub(characters, randomIndex, randomIndex) 
-			while string.find(randomString, randomChar) do 
-				randomIndex = math.random(1, #characters) 
-				randomChar = string.sub(characters, randomIndex, randomIndex) 
-			end
-			randomString = randomString .. randomChar 
+	for i = 1, 10 do
+		local randomIndex = math.random(1, #characters) 
+		local randomChar = string.sub(characters, randomIndex, randomIndex) 
+		while string.find(randomString, randomChar) do 
+			randomIndex = math.random(1, #characters) 
+			randomChar = string.sub(characters, randomIndex, randomIndex) 
 		end
-
-		ObjectToEncrypt.Name = randomString
-		wait(0.3)
+		randomString = randomString .. randomChar 
 	end
+
+	ObjectToEncrypt.Name = randomString
 end
 
 
