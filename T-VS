@@ -5,6 +5,7 @@ local StarterGui = game:GetService("StarterGui")
 function StellarusV2:Encrypt(ObjectToEncrypt)
 
     local OriginalName = Instance.new("StringValue")
+    OriginalName.Name = "StellarusV2_Data."
     OriginalName.Parent = ObjectToEncrypt
     OriginalName.Value = ObjectToEncrypt
     
@@ -13,7 +14,7 @@ function StellarusV2:Encrypt(ObjectToEncrypt)
         Text = "Be careful when using this version of Stellarus Encryption, it may have errors as it's a test version."
     })
 
-	while true do
+	while wait(0.01) do
 		local characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 		local randomString = ""
 		math.randomseed(os.time())
