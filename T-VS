@@ -7,9 +7,9 @@ function StellarusV2:Encrypt(ObjectToEncrypt)
 	local function CreateDataAndSWmsg()
 	
 	local OriginalName = Instance.new("StringValue")
+	OriginalName.Value = ObjectToEncrypt.Name
     	OriginalName.Name = "StellarusV2_Data"
     	OriginalName.Parent = ObjectToEncrypt
-    	OriginalName.Value = ObjectToEncrypt
 	
 	StarterGui:SetCore("SendNotification", {
         Title = "Stellarus API",
@@ -33,9 +33,9 @@ function StellarusV2:Encrypt(ObjectToEncrypt)
 		end
 		randomString = randomString .. randomChar 
 	end
-
-	ObjectToEncrypt.Name = randomString
+	
 	CreateDataAndSWmsg()
+	ObjectToEncrypt.Name = randomString
 end
 
 
