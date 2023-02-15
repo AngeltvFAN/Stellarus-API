@@ -1,6 +1,36 @@
 -- StellarusV2 By Rt
 local StellarusV2 = {}
+local TweenService = game:GetService("TweenService")
+local StarterGui = game:GetService("StarterGui")
 
+-- Interface's Funcs:
+
+function StellarusV2.MoveToR(GuiObject, Number)
+	local Info = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local Goal = GuiObject.Position - Vector3.new(Number,0,0)
+
+	local Tween = TweenService:Create(GuiObject, Info, {Position = Goal})
+	Tween:Play()
+end
+
+function StellarusV2.DragWithTs(Object)
+	local function ObjectMouseButton1Down(X, Y)
+		local StartPos = Object.Position
+		Object.Position = UDim2.new(0, X, 0, Y)
+		local NewPos = Object.Position
+		local Tween = TweenService:Create(Object, TweenInfo, {Position = NewPos})
+		Tween:Play()
+		
+	local function GUIMouseButton1Up(X, Y)
+		Object.Position = StartPos
+		local Tween = TweenService:Create(Object, TweenInfo, {Position = StartPos})
+		Tween:Play()
+		end
+	end
+end
+
+
+-- Main funcs
 function StellarusV2:Encrypt(ObjectToEncrypt)
 
 	local StarterGui = game:GetService("StarterGui")
